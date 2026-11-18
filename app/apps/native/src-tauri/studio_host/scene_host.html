@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="vnccs-studio-origin" content="{{studio_origin}}">
+    <title>VNCCS Scene Editor</title>
+    <style>
+      html, body { height: 100%; margin: 0; overflow: hidden; background: #0a0a0f; color-scheme: dark; }
+      #scene-editor { width: 100%; transform-origin: top center; }
+      #scene-status { padding: 24px; color: #9898a8; font: 14px/1.5 system-ui, sans-serif; }
+      #scene-editor :is(.vnccs-cg-widget, .vnccs-cg-creator.vnccs-i3s) { overflow: clip; }
+      #scene-editor .vnccs-cg-creator .cg-workspace {
+        --cg-gallery-width: clamp(175px, 19vw, 280px);
+        grid-template-columns: minmax(175px, 24%) minmax(0, 1fr) var(--cg-gallery-width);
+      }
+      #scene-editor .vnccs-cg-creator :is(.bg-model-toolbar, .bg-gallery-toolbar) { flex-wrap: wrap; }
+      #scene-editor .vnccs-cg-creator .bg-scene-picker { flex: 1 1 200px; min-width: 0; }
+      #scene-editor .vnccs-cg-creator [data-save-view] { max-width: 100%; padding-inline: 12px; }
+      #scene-editor[data-desktop] .vnccs-cg-creator.vnccs-i3s {
+        width: var(--studio-cg-width) !important;
+        height: var(--studio-cg-height) !important;
+        zoom: var(--studio-cg-zoom) !important;
+      }
+      #scene-editor .vnccs-cg-creator .bg-generation-dock {
+        width: min(384px, calc(100% - var(--cg-gallery-width) - 24px));
+      }
+    </style>
+    <script type="module" src="/vnccs/studio/scene_host.mjs"></script>
+  </head>
+  <body>
+    <div id="scene-status" role="status">Loading editor…</div>
+    <main id="scene-editor"></main>
+  </body>
+</html>

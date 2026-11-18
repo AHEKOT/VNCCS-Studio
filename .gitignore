@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+node_modules/
+.next/
+out/
+dist/
+.turbo/
+target/
+coverage/
+.comfy-ts/
+app/apps/native/src-tauri/gen/
+next-env.d.ts
+*.tsbuildinfo
